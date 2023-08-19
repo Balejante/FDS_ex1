@@ -17,6 +17,7 @@ public class CarregaDadosTxt implements ICarregaDados{
         
     }
 
+    // le o arquivo .txt e adciona objetos RegistroDoTempo a lista registros
     @Override
     public List<RegistroDoTempo> getRegistros(){
         String currDir = Paths.get("").toAbsolutePath().toString();

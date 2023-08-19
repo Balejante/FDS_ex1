@@ -1,7 +1,9 @@
+import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Predicate;
 
-public class Consultas {
+public class Consultas implements IConsultasRepository{
     private List<RegistroDoTempo> registros;
 
     public Consultas(List<RegistroDoTempo> registrosDados){
@@ -26,5 +28,41 @@ public class Consultas {
         .orElseThrow(IllegalArgumentException::new);
         String resp = registro.getDia()+"/"+registro.getMes()+"/"+registro.getAno()+", "+registro.getPrecipitacao();
         return resp;
+    }
+
+
+    // retorna a lista "registros"
+    @Override
+    public Collection<RegistroDoTempo> todosDados() {
+
+        throw new UnsupportedOperationException("Unimplemented method 'todosDados'");
+    }
+
+
+    // pesquisa em registros por um RegistroDoTempo correspondente a dia, mes e ano
+    // se existir, retorna o RegistroDoTempo. Se nao, retorna null
+    @Override
+    public RegistroDoTempo recupera(int dia, int mes, int ano) {
+
+        throw new UnsupportedOperationException("Unimplemented method 'recupera'");
+    }
+
+
+
+    // pesquisa em registros por um RegistroDoTempo correspondente a dia, mes e ano
+    // se existir, retorna o True. Se nao, retorna False
+    @Override
+    public boolean existe(int dia, int mes, int ano) {
+
+        throw new UnsupportedOperationException("Unimplemented method 'existe'");
+    }
+
+
+    //realiza uma pesquisa com Predicate(funcao lambda) na lista "Registros"
+    //retorna uma Lista dos registros correspondentes ao Predicate
+    @Override
+    public List<RegistroDoTempo> diasEmQue(Predicate<RegistroDoTempo> predicate) {
+
+        throw new UnsupportedOperationException("Unimplemented method 'diasEmQue'");
     }
 }
