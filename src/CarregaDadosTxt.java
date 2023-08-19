@@ -7,11 +7,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class CarregaDados implements ICarregaDados{
+public class CarregaDadosTxt implements ICarregaDados{
     List<RegistroDoTempo> registros;
     private String nArq;
 
-    public CarregaDados(){
+    public CarregaDadosTxt(){
         nArq = "poa_temps.txt";
         registros  = new ArrayList<RegistroDoTempo>();
         
