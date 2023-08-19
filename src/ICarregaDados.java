@@ -1,5 +1,5 @@
 import java.util.Collection;
 
-interface ICarregaDados<T> {
+interface ICarregaDados {
     Collection<RegistroDoTempo> getRegistros();
 }

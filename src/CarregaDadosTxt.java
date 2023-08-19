@@ -11,8 +11,8 @@ public class CarregaDadosTxt implements ICarregaDados{
     List<RegistroDoTempo> registros;
     private String nArq;
 
-    public CarregaDadosTxt(){
-        nArq = "poa_temps.txt";
+    public CarregaDadosTxt(String nArq){
+        this.nArq = nArq;
         registros  = new ArrayList<RegistroDoTempo>();
         
     }
