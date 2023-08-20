@@ -58,7 +58,7 @@ public class Consultas implements IConsultasRepository{
 
     //realiza uma pesquisa com Predicate(funcao lambda) na lista "Registros"
     //retorna uma Lista dos registros correspondentes ao Predicate
-    @Override
+    
     public List<RegistroDoTempo> diasEmQue(Predicate<RegistroDoTempo> predicate) {
 
         throw new UnsupportedOperationException("Unimplemented method 'diasEmQue'");
