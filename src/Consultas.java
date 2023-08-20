@@ -7,9 +7,9 @@ public class Consultas implements IConsultasRepository {
     private List<RegistroDoTempo> registros;
     private Predicate<RegistroDoTempo> condicao;
 
-    public Consultas(List<RegistroDoTempo> registrosDados) {
+    public Consultas(List<RegistroDoTempo> registrosDados, Predicate<RegistroDoTempo> consultaInicial) {
         registros = registrosDados;
-        this.condicao = reg -> reg.getAno() == 2000;
+        this.condicao = consultaInicial;
     }
 
     public List<String> datasEmQueChouveuMaisDe(double milimetros) {
