@@ -37,6 +37,12 @@ public class Consultas implements IConsultasRepository {
         return registros;
     }
 
+    @Override
+    public void cadastra(RegistroDoTempo novoRegistro){
+        if(!(registros.contains(novoRegistro))){
+            registros.add(novoRegistro);
+        }
+    }
 
     // pesquisa em registros por um RegistroDoTempo correspondente a dia, mes e ano
     // se existir, retorna o RegistroDoTempo. Se nao, retorna null
@@ -48,13 +54,24 @@ public class Consultas implements IConsultasRepository {
                         .orElse(null);   
     }
 
-
+    @Override
+    public List<RegistroDoTempo> pesquisa(Predicate<RegistroDoTempo> condicao){
+        return registros.stream()
+                        .filter(condicao)
+                        .toList();
+    }
 
     // pesquisa em registros por um RegistroDoTempo correspondente a dia, mes e ano
     // se existir, retorna o True. Se nao, retorna False
     @Override
     public boolean existe(int dia, int mes, int ano) {
         return recupera(dia, mes, ano) != null;
+    }
+
+    @Override
+    public void remove(int dia, int mes, int ano){
+        RegistroDoTempo aux = recupera(dia, mes, ano);
+        if(aux != null){registros.remove(aux);}
     }
 
     
