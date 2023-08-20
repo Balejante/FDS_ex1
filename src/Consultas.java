@@ -34,17 +34,16 @@ public class Consultas implements IConsultasRepository{
     // retorna a lista "registros"
     @Override
     public Collection<RegistroDoTempo> todosDados() {
-
-        throw new UnsupportedOperationException("Unimplemented method 'todosDados'");
+        return registros;
     }
 
-
-    // pesquisa em registros por um RegistroDoTempo correspondente a dia, mes e ano
-    // se existir, retorna o RegistroDoTempo. Se nao, retorna null
+    // retorna a lista "registros"
     @Override
     public RegistroDoTempo recupera(int dia, int mes, int ano) {
-
-        throw new UnsupportedOperationException("Unimplemented method 'recupera'");
+        return registros.stream()
+                        .filter(reg->reg.getDia() == dia && reg.getMes() == mes && reg.getAno() == ano)
+                        .findFirst()
+                        .orElse(null);   
     }
 
 
@@ -53,8 +52,7 @@ public class Consultas implements IConsultasRepository{
     // se existir, retorna o True. Se nao, retorna False
     @Override
     public boolean existe(int dia, int mes, int ano) {
-
-        throw new UnsupportedOperationException("Unimplemented method 'existe'");
+        return recupera(dia, mes, ano) != null;
     }
 
 
@@ -65,4 +63,6 @@ public class Consultas implements IConsultasRepository{
 
         throw new UnsupportedOperationException("Unimplemented method 'diasEmQue'");
     }
+
+
 }
